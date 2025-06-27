@@ -4,67 +4,114 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iyandurai V - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+    }
+    header {
+      background-color: #343a40;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem;
+    }
+    nav button {
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    nav button:hover {
+      background-color: #0056b3;
+    }
+    section {
+      display: none;
+      padding: 2rem;
+      background-color: white;
+      margin: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    section.active {
+      display: block;
+    }
+    img.profile {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      display: block;
+      margin: 1rem auto;
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <div class="profile">
-      <img src="photo.jpg" alt="Iyandurai V">
-      <h1>Iyandurai V</h1>
-      <p>S/O Venkatachalam, No. 241 A, Denishpettai, Ulkombai, Danishpet (PO), Kadayampatti (TK), Salem (DT) – 636354</p>
-      <p>📞 +91-9344810727 | 📧 iyandurai142@gmail.com</p>
-      <p><a href="https://github.com/Iyandurai" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/iyandurai-v-9344810727s" target="_blank">LinkedIn</a></p>
-    </div>
+    <h1>Iyandurai V</h1>
+    <img src="images/photo.jpg" alt="Iyandurai V" class="profile">
+    <p>📍 Salem | 📞 9344810727 | 📧 iyandurai142@gmail.com</p>
   </header>
 
   <nav>
-    <ul class="nav-bar">
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Technical Skills</a></li>
-      <li><a href="#project">Project</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-    </ul>
+    <button onclick="showSection('education')">Education</button>
+    <button onclick="showSection('skills')">Technical Skills</button>
+    <button onclick="showSection('project')">Project</button>
+    <button onclick="showSection('certifications')">Certifications</button>
   </nav>
 
   <section id="education">
-    <h2>🎓 Education</h2>
-    <p><strong>B.E - Computer Science and Engineering</strong>, R.P. Sarathy Institute of Technology – Anna University (2026) – CGPA: 6.3</p>
-    <p><strong>12th</strong> – Swamy Vivekanandha Vidhyalaya Matric Higher Secondary School, Kadayampatti – 61.66%</p>
-    <p><strong>10th</strong> – Swamy Vivekanandha Vidhyalaya Matric Higher Secondary School, Kadayampatti – 73.4%</p>
+    <h2>Education</h2>
+    <ul>
+      <li><strong>B.E - CSE</strong>, R.P. Sarathy Institute of Technology, Anna University, 2026 (Expected) - CGPA: 6.3</li>
+      <li><strong>HSC (12th)</strong>, Swamy Vivekanandha Vidhyalaya School, Kadayampatti, 2022 - 61.66%</li>
+      <li><strong>SSLC (10th)</strong>, Swamy Vivekanandha Vidhyalaya School, Kadayampatti, 2020 - 73.4%</li>
+    </ul>
   </section>
 
   <section id="skills">
-    <h2>💻 Technical Skills</h2>
+    <h2>Technical Skills</h2>
     <ul>
-      <li>Python (Basics)</li>
-      <li>Java (Basics)</li>
+      <li>Python (Basics), Java (Basics)</li>
       <li>HTML, CSS, JavaScript (Basics)</li>
       <li>MySQL (Basics)</li>
-      <li>VS Code, GitHub (Basics)</li>
+      <li>Tools: VS Code, GitHub (Basics)</li>
     </ul>
   </section>
 
   <section id="project">
-    <h2>📁 Project</h2>
-    <p><strong>Web App – Personal Portfolio Website</strong></p>
-    <p>Developed a personal portfolio website to showcase academic background, skills, and projects. Built using HTML, CSS, and JavaScript with responsive design. Hosted the site on GitHub Pages to demonstrate version control and deployment.</p>
+    <h2>Academic Project</h2>
+    <p><strong>Personal Portfolio Website</strong> – Built using HTML, CSS, and JavaScript to showcase academic background, skills, and hosted on GitHub Pages.</p>
   </section>
 
   <section id="certifications">
-    <h2>📜 Certifications</h2>
+    <h2>Certifications & Achievements</h2>
     <ul>
       <li>NCC – B Certificate</li>
       <li>NCC – C Certificate</li>
       <li>Typewriting English – Junior Grade</li>
-      <li>Cyber Attacks and Counter Measures Conference – TN Police Cyber Crime Wing, Salem</li>
+      <li>Certificate in "Cyber Attacks and Counter Measures" – TN Police Cyber Crime Wing</li>
       <li>Client-Server App Design & Web Technologies – Algojaxon Global Soft</li>
     </ul>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Iyandurai V</p>
-  </footer>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+    // Show first tab by default
+    showSection('education');
+  </script>
 
 </body>
 </html>
