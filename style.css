@@ -22,3 +22,12 @@ section {
   margin: 20px;
   border-bottom: 1px solid #ccc;
 }
+<style>
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* optional: makes it circular */
+    margin-top: 10px;
+  }
+</style>
